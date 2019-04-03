@@ -1,0 +1,28 @@
+#top{
+    display:flex;
+}
+
+.title{
+    width:15%;
+    background:orange;
+    text-align: center;
+    height:100%;
+}
+
+#inputDiv{
+    width:30%;
+}
+
+#searchBar{
+    bottom:50%;
+    
+}
+
+#bottom{ 
+    display:flex;
+    position: fixed; 
+    bottom: 0;
+    height: 150px;
+    width: 100%;
+    border: solid;
+}

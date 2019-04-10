@@ -1,28 +1,97 @@
 #top{
     display:flex;
+    box-sizing: border-box;
+
 }
 
-.title{
-    width:15%;
-    background:orange;
-    text-align: center;
+#titleDiv{
+    width:50%;
+    background:#4286f4;
     height:100%;
+    text-shadow: 1px 1px 20px white;
+    color:lightgrey;
+    text-align:center;
 }
 
-#inputDiv{
-    width:30%;
+.topButtons{
+    height:100%;
+    justify-content:space-between;
+    width:20%;
 }
 
-#searchBar{
-    bottom:50%;
-    
+#topButtonDiv{
+    width:50%;
+    background:lightgrey;
+    display:flex;
+    justify-content:space-around;
+}
+/*------------------------------------------------------*/
+
+/*#search{*/
+/*    text-align:center;*/
+
+
+#searchContent{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -100px;
+        border:blue 1px solid;
+
 }
 
+
+#seathContent{
+
+}
+
+
+
+
+
+
+
+
+
+/*------------------------------------------------------*/
 #bottom{ 
     display:flex;
     position: fixed; 
     bottom: 0;
-    height: 150px;
+    height: 50px;
     width: 100%;
     border: solid;
+}
+
+.down{
+    padding-left: 10px;
+}
+
+button{
+    background:white;
+    border: 2px solid #4286f4;
+}
+
+button:hover{
+    animation-duration: 0.3s;
+    animation-name:  buttonHover;
+    animation-play-state: running;
+    background:#4286f4;
+    border: 2px solid white;
+    color:white;
+}
+
+
+@keyframes buttonHover{
+    from{
+        background:white;
+        border: 2px solid #4286f4;
+        color:black;
+    }
+    to{
+        background:#4286f4;
+        border: 2px solid white;
+        color:white;
+    }
 }

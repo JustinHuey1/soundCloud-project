@@ -6,24 +6,58 @@
     </head>
     <body>
         <div id="top">
-            <h1 class="title">MusiCloud</h1>
-            <!--<a href="playlist.html">Playlists</a>-->
-            <div id="inputDiv">
-                <input id="searchBar" type="text" name="Search">
-                <button id="search">Search</button>
+            <div id="titleDiv">
+                <h1 class="title">MusiCloud</h1>                <!--<a href="playlist.html">Playlists</a>-->
             </div>
+            <div id="topButtonDiv">
+                    <button id="searchButton" class="topButtons">Search</button>
+                    <button id="recommandedButton" class="topButtons">Recommended</button>
+                    <button id="settingButton" class="topButtons">Setting</button>
+                </div>
         </div>
         <div id="middle">
-            <div id="recommend">Recommended</div>
+            <div id="recommendContent" class='contents'>
+                <a href="https://soundcloud.com/yungestbae/doododoooo">Yung Bae: Doo Do Doooo (feat. Alexander Lewis & Flamingosis)</a>
+                <a href=""></a>
+                
+            </div>
+            <div id="searchContent" class='contents'>
+                <div id="searchDivTop">
+                    <input id="searchBar" type="text" name="Search">
+                    <button id="searcher">Search</button>
+                </div>
+                <div id="searchDivBottom">
+                    <div id="searchOutPut"></div> <!--out put-->
+                </div>
+            </div>
+            
+            <div id="settingContent" class='contents'>
+                
+            </div>
             <!--songs-->
         </div>
         <div id="bottom">
             <!--song bar-->
+            <div id='songControl'>
+                <img class='down' id='prev' src='imgs/prevSong.png'>
+                <img class='down' id='playPause' src='imgs/play.png'>
+                <img class='down' id='next' src='imgs/nextSong.png'>
+            </div>
+            <div id='time'>0:00</div>
+            <div id='songProgress'>
+                
+            </div>
+            <div id='replayMethod'>
+                
+            </div>
+            <div id='volume'></div>
+            <div id='songList'></div>
         </div>
         
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <script src="https://connect.soundcloud.com/sdk/sdk-3.3.2.js"></script>
         <script src='script.js'></script>
     </body>
 </html>

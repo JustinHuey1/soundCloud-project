@@ -21,7 +21,7 @@
 
 #topButtonDiv{
     width:50%;
-    background:lightgrey;
+    background:linear-gradient(to left, #4286f4, lightgrey, white, lightgrey,#4286f4);
     display:flex;
     justify-content:space-around;
 }
@@ -34,26 +34,21 @@
 #searchContent{
     position: fixed;
     top: 50%;
-    left: 50%;
+    left: 25%;
     margin-top: -50px;
     margin-left: -100px;
-        border:blue 1px solid;
-
+    /*border:blue 1px solid;*/
+    width:100%;
 }
 
 
-#seathContent{
-
+#searchBar{
+    width:50%;
 }
 
-
-
-
-
-
-
-
-
+#searchLogo{
+    zoom:25%;
+}
 /*------------------------------------------------------*/
 #bottom{ 
     display:flex;

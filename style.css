@@ -30,13 +30,16 @@
 /*#search{*/
 /*    text-align:center;*/
 
+a{
+    
+}
 
 #searchContent{
     position: fixed;
-    top: 50%;
+    top: 25%;
     left: 25%;
-    margin-top: -50px;
-    margin-left: -100px;
+    margin-top: -25px;
+    margin-left: -10px;
     /*border:blue 1px solid;*/
     width:100%;
 }
@@ -50,6 +53,17 @@
     zoom:25%;
 }
 /*------------------------------------------------------*/
+
+#prev, #playPause, #next{
+    margin-top:1%;
+}
+
+
+.mendedImg{
+    width: 160px;
+    height: 160px;
+}
+
 #bottom{ 
     display:flex;
     position: fixed; 
@@ -66,6 +80,7 @@
 button{
     background:white;
     border: 2px solid #4286f4;
+    border-radius:5%;
 }
 
 button:hover{
@@ -89,4 +104,161 @@ button:hover{
         border: 2px solid white;
         color:white;
     }
+}
+
+#soundCloudImg{
+    border:solid #4286f4 2px;
+    /*margin-top:1px;*/
+}
+
+#searchOutPut{
+  overflow-y: auto;
+  height:1650%;
+    position: absolute;
+  border:solid black 1px;
+  width:75%;
+  left:-12%;
+  
+  /*background-image: url("");*/
+  /*background-repeat: no-repeat;*/
+  /*background-position: center;*/
+}
+/**/
+
+.songImg{
+    padding: 10px;
+
+}
+
+.songArtist{
+    padding: 10px;
+}
+
+.playButton{
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+}
+
+.songDiv{
+    display: flex;
+    
+}
+
+.songDesc{
+    padding: 10px;
+}
+
+#time, #myRange, .slidecontainer{
+    padding-left: 25px;
+    margin-top: auto; /* Important */ 
+    margin-bottom: auto;
+    text-align: center; 
+}
+
+#time{
+    display: flex;
+}
+
+/* slider css*/
+@keyframes slideRotate{
+    from{
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+    }
+}
+
+.slidecontainer {
+  width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none;
+
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  background-clip: content-box;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  background: url('imgs/disc.png')  no-repeat center center;
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-animation: slideRotate 5s infinite alternate;
+  animation: slideRotate 5s infinite alternate;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+#songControl{
+    display: flex;
+}
+
+.desc{
+    overflow:scroll;
+    height:150px;
+}
+
+
+
+/* end of slider */
+
+
+
+.songDiv{
+    display:flex;
+    justify-content:space-between;
+}
+
+/* songList css*/
+#playList{
+    position: absolute;
+    display: flex;
+    width: 300px;
+    border: solid 1px black;
+    background: yellow;
+    flex-wrap:wrap;
+}
+
+#listTitle{
+    border: solid 2px blue;
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+    width: 100%;
+    margin: 10px;
+}
+
+.playListSong{
+    border: solid 1px gray;
+    margin: 10px;
+    width: calc(100% - 20px);
+}
+
+.currentSong{
+    background: #c6f9b6;
 }

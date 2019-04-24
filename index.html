@@ -9,6 +9,8 @@
             <div id="titleDiv">
                 <h1 class="title">MusiCloud</h1>                <!--<a href="playlist.html">Playlists</a>-->
             </div>
+            <a href="https://soundcloud.com/" target="_blank"><img id="soundCloudImg" src="https://developers.soundcloud.com/assets/powered_by_large_black-64fec369eec44b7ee75119f288c6d010.png"></a>
+
             <div id="topButtonDiv">
                     <button id="searchButton" class="topButtons">Search</button>
                     <button id="recommandedButton" class="topButtons">Recommended</button>
@@ -17,8 +19,14 @@
         </div>
         <div id="middle">
             <div id="recommendContent" class='contents'>
+                <img class="mendedImg" src="https://i1.sndcdn.com/artworks-000203385222-usui1j-t500x500.jpg"></img>
                 <a href="https://soundcloud.com/yungestbae/doododoooo">Yung Bae: Doo Do Doooo (feat. Alexander Lewis & Flamingosis)</a>
-                <a href=""></a>
+                <img class="mendedImg" src="https://i1.sndcdn.com/artworks-000051688674-gf6o2s-t500x500.jpg"></img>
+                <a href="https://soundcloud.com/minecraftwizards/05-c418-living-mice">C418 - Living Mice</a>
+                <img class="mendedImg" src="https://i1.sndcdn.com/artworks-000141881310-18m2qv-t500x500.jpg"></img>
+                <a href="https://soundcloud.com/alpharad-1/simple-and-clean">Alpharad - Simple and Clean</a>
+                <img class="mendedImg" src="https://i1.sndcdn.com/artworks-000484265124-21om4c-t500x500.jpg"></img>
+                <a href ="https://soundcloud.com/dav-044/ham-and-cheese-keyshawn-spinks">Ham and Cheese - Keyshawn Spinks</a>
                 
             </div>
             <div id="searchContent" class='contents'>
@@ -27,9 +35,7 @@
                     <button id="searcher">Search <img id ="searchLogo" src="imgs/someSort_Logo.png"></button>
                 </div>
                 <div id="searchDivBottom">
-                    <div id="searchOutPut">
-                        
-                    </div> <!--out put-->
+                    <div id="searchOutPut"></div> <!--out put-->
                 </div>
             </div>
             
@@ -45,15 +51,34 @@
                 <img class='down' id='playPause' src='imgs/play.png'>
                 <img class='down' id='next' src='imgs/nextSong.png'>
             </div>
-            <div id='time'>0:00</div>
-            <div id='songProgress'>
-                
+            <div id='time'>
+                <div id='cTime'>0:00</div>
+                <div>/</div>
+                <div id='sTime'>0:00</div>
+            </div>
+            <!-- W3SCHOOL OP -->
+            <div class="slidecontainer">
+              <input type="range" min="1" max="100" value="1" class="slider" id="myRange" onmouseup="moveSong()">
             </div>
             <div id='replayMethod'>
                 
             </div>
-            <div id='volume'></div>
-            <div id='songList'></div>
+            <div id='volume'>
+                <img src='imgs/volume.png'>
+            </div>
+            <div id='songList'>
+                <img src='imgs/songList.png'>
+            </div>
+        </div>
+        
+        <!--playlist-->
+        <div id='playList'>
+            <div id='listTitle'>
+                Playlist
+            </div>
+            <div id='playListSongs'>
+                
+            </div>
         </div>
         
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">

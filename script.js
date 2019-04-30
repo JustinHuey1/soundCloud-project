@@ -189,6 +189,7 @@ function step() {
 }
 
 function playSong(id){
+  id = parseInt(id);
   $("#playPause").attr("src","imgs/pause.png");
   let song = songs[id];
   songLength = song.getDuration();
@@ -241,7 +242,34 @@ $('#songList').click(function(evt){
   let f = function(v, i) {
     let $song = $('<div>').addClass('playListSong');
     $song.attr('index', i);
-    if (i === currentSong){
+    //deletion
+    $song.contextmenu(function(e){
+      //prevent context menu
+      e.preventDefault();
+      $("#playListSongs").empty();
+      let i = parseInt($(this).attr('index'));
+      //if last song on list
+      if (playList.length === 1){
+        songs[currentSong].pause();
+        playing = false;
+        playList = [];
+        currentSong = undefined;
+        return playList.forEach(f);
+      }
+      //if the end of the list
+      if (i === playList.length - 1){
+        //play previous song
+        playSong(i - 1);
+        //remove from list
+        playList.pop();
+        return playList.forEach(f);
+      }
+      //other wise
+      playList.splice(i, 1);
+      playSong(i);
+      playList.forEach(f);
+    });
+    if (parseInt(i) === parseInt(currentSong)){
       $song.addClass('currentSong');
     }
     $("#playListSongs").append($song);
@@ -262,30 +290,7 @@ $('#songList').click(function(evt){
   //position it
   $list.offset({left: evt.pageX - $list.width() - 10, top: evt.pageY - 10 - $list.height()});
 });
-$('.playListSong').on('contextmenu', function(e){
-  //prevent context menu
-  e.preventDefault();
-  let i = $(this).attr('index');
-  //if last song on list
-  if (playList.length === 1){
-    songs[currentSong].pause();
-    playing = false;
-    playList = [];
-    currentSong = undefined;
-    return;
-  }
-  //if the end of the list
-  if (i === playList.length - 1){
-    //play previous song
-    playSong(i - 1);
-    //remove from list
-    playList.pop();
-    return;
-  }
-  //other wise
-  playList.splice(i, 1);
-  playSong(i);
-});
+
 // let cover = [];
 
 // $("#bottom").click(function(){

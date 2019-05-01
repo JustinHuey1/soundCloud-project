@@ -9,6 +9,7 @@ let songs = [];
 let songData = [];
 let playList = [];
 let currentSong;
+let volume = 1;
 
 let $slider = $('.slider');
 
@@ -197,6 +198,7 @@ function playSong(id){
   playing = true;
   currentSong = id;
   songTime = 0;
+  songs[currentSong].setVolume(volume);
   //set scroll bar
   let second = Math.ceil(song.getDuration() / 1000);
   $slider.attr('min', '0');
@@ -314,11 +316,89 @@ $("#playPause").click(function() {
     playing = false;
     $("#playPause").attr("src","imgs/play.png");
   }else if(playing === false && currentSong){
-    songs[currentSong].play();
-    playing = true;
+    playSong(currentSong);
     $("#playPause").attr("src","imgs/pause.png");
-  }else{//else may be useless here, dont know, didn't try
-    $("#playPause").attr("src","imgs/loading.gif");
   }
-  
 });
+//Previous and Next Song--------------------------------------------------------
+let $prev = $('#prev');
+let $next = $('#next');
+$prev.click(function(){
+  currentSong --;
+  if (currentSong < 0){
+    currentSong = playList.length - 1;
+  }
+  if (songs[currentSong]){
+    playSong(currentSong);
+  }
+});
+$next.click(function(){
+  currentSong ++;
+  if (currentSong >= playList.length){
+    currentSong = 0;
+  }
+  if (songs[currentSong]){
+    playSong(currentSong);
+  }
+});
+//color change------------------------------------------------------------------
+  $("#colorChange").click(function(){
+    let newColor = $("#colorTheme").val();
+    console.log($("#colorTheme").val());
+    $("body").css("background-color",newColor);
+
+  });
+//volume change--------------------------------------------
+let $volume = $('#volume');
+$volume.click(function(){
+  var vol = prompt("Type in volume(0-100):", "100");
+  volume = parseInt(vol) / 100;
+  if (volume < 0){
+    volume = 0;
+  }else if (volume > 1){
+    volume = 1;
+  }
+  songs[currentSong].setVolume(volume);
+});
+$('#volumeChange').click(()=>{
+  let vol = $('#volumeInput').val();
+  volume = parseInt(vol) / 100;
+  if (volume < 0){
+    volume = 0;
+  }else if (volume > 1){
+    volume = 1;
+  }
+  songs[currentSong].setVolume(volume);
+});
+
+//genre---------------------------
+var genre= "anime";
+var genreSearchLink = `https://api.soundcloud.com/tracks?q&genres=${genre}&client_id=5aa8e389ba4e24b6106af5159ab3e344`
+
+//need to assign genre and change top
+$("#g").click(function(){
+  $.ajax({
+    url: genreSearchLink ,
+    method: "GET",
+    success: function(data){
+      console.log(data);
+      
+      for(let i = 0;data.length;i++){
+        let div = $("<div>");
+      }
+      
+      
+      
+      
+      
+      
+      
+      
+    },
+//aka: 'don bonus',
+  });
+});
+
+//never gonna
+let you = "down";
+

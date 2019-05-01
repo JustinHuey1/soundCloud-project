@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Sound of Placeholder</title>
+        <title>MusiCloud</title>
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
@@ -20,13 +20,16 @@
         <div id="middle">
             <div id="recommendContent" class='contents'>
                 <img class="mendedImg" src="https://i1.sndcdn.com/artworks-000203385222-usui1j-t500x500.jpg"></img>
-                <a href="https://soundcloud.com/yungestbae/doododoooo">Yung Bae: Doo Do Doooo (feat. Alexander Lewis & Flamingosis)</a>
+                <a class "mendedLink" href="https://soundcloud.com/yungestbae/doododoooo">Yung Bae: Doo Do Doooo (feat. Alexander Lewis & Flamingosis)</a>
+                <br>
                 <img class="mendedImg" src="https://i1.sndcdn.com/artworks-000051688674-gf6o2s-t500x500.jpg"></img>
-                <a href="https://soundcloud.com/minecraftwizards/05-c418-living-mice">C418 - Living Mice</a>
+                <a class "mendedLink" href="https://soundcloud.com/minecraftwizards/05-c418-living-mice">C418 - Living Mice</a>
+                <br>
                 <img class="mendedImg" src="https://i1.sndcdn.com/artworks-000141881310-18m2qv-t500x500.jpg"></img>
-                <a href="https://soundcloud.com/alpharad-1/simple-and-clean">Alpharad - Simple and Clean</a>
+                <a class "mendedLink" href="https://soundcloud.com/alpharad-1/simple-and-clean">Alpharad - Simple and Clean</a>
+                <br>
                 <img class="mendedImg" src="https://i1.sndcdn.com/artworks-000484265124-21om4c-t500x500.jpg"></img>
-                <a href ="https://soundcloud.com/dav-044/ham-and-cheese-keyshawn-spinks">Ham and Cheese - Keyshawn Spinks</a>
+                <a class "mendedLink" href ="https://soundcloud.com/dav-044/ham-and-cheese-keyshawn-spinks">Ham and Cheese - Keyshawn Spinks</a>
                 
             </div>
             <div id="searchContent" class='contents'>
@@ -35,13 +38,26 @@
                     <button id="searcher">Search <img id ="searchLogo" src="imgs/someSort_Logo.png"></button>
                 </div>
                 <div id="searchDivBottom">
-                    <div id="searchOutPut"></div> <!--out put-->
+                    <div id="searchOutPut"></div> <!--output-->
                 </div>
             </div>
             
             <div id="settingContent" class='contents'>
                 <strong>THEME</strong>
-                    <input input='colorTheme' placeholder="put in hex code"></input>
+                <br>
+                <input id='colorTheme' placeholder="put hex code" type=color>
+                <button id="colorChange">Change</button>
+                <br>
+                <br>
+                <strong>VOLUME</strong>
+                <br>
+                <input id='volumeInput' placeholder='0-100' type='number' min='0' max='100'>
+                <button id="volumeChange">Change</button>
+                <br>
+                <br>
+                <strong>genre</strong>
+                <input>
+                <button id="g">gg</button>
             </div>
             <!--songs-->
         </div>

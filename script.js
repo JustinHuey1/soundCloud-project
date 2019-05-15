@@ -93,7 +93,7 @@ $('#searcher').click(function(evt){
                 if(data.artwork_url !== null){
                   $img.attr('src', data.artwork_url).addClass("songImg");
                 }else{
-                  $img.attr('src', "imgs/noImg.png").addClass("songImg");
+                  $img.attr('src', "imgs/noImg2.png").addClass("songImg");
                 }
                 $song.append($img);
                 //title
@@ -372,33 +372,79 @@ $('#volumeChange').click(()=>{
 });
 
 //genre---------------------------
-var genre= "anime";
-var genreSearchLink = `https://api.soundcloud.com/tracks?q&genres=${genre}&client_id=5aa8e389ba4e24b6106af5159ab3e344`
+let genreSearchLink;
+let genre
 
 //need to assign genre and change top
 $("#g").click(function(){
+  $("#moreRecommend").html("")
+  genre = $("#inputG").val()
+  //console.log(genre)
+  genreSearchLink = `https://api.soundcloud.com/tracks?q&genres=${genre}&client_id=5aa8e389ba4e24b6106af5159ab3e344`
+  
   $.ajax({
     url: genreSearchLink ,
     method: "GET",
     success: function(data){
-      console.log(data);
-      
-      for(let i = 0;data.length;i++){
+      //console.log(data[0].artwork_url);
+      alert("genre set to: "+genre)
+      for(let i = 0;/*data.length*/i<10;i++){
         let div = $("<div>");
+        let coverImageURL;
+        div.attr("class", "genreDiv" + i)
+        div.addClass("genreRecommend")
+        //console.log("genreDiv" + i)
+        
+        if (data[i].artwork_url !== null){
+          coverImageURL = data[i].artwork_url 
+        }else{
+          coverImageURL = "imgs/noImg2.png"
+        }
+        
+        let imgDiv = $("<img>").attr("src",coverImageURL)
+        div.attr("title", data[i].permalink)
+        
+        let aTag = $("<a>").attr("href",data[i].permalink_url)
+        aTag.attr("target","_blank")
+        
+        let appendMe = aTag.append(div.append(imgDiv))
+        $("#moreRecommend").append(appendMe)
       }
-      
-      
-      
-      
-      
-      
-      
-      
+    
     },
 //aka: 'don bonus',
   });
 });
 
+
+// function hidePlayer(){
+//     $("#bottom").css("display","none")
+// }
+
+// $(document).scroll(function(){ 
+//     if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight && locked === false) {
+//       offset+=25;
+//       console.log(offset);
+//       locked = true;
+       
+//     }
+  
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
 //never gonna
 let you = "down";
+
+
 

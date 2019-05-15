@@ -269,3 +269,14 @@ button:hover{
 .currentSong{
     background: #c6f9b6;
 }
+
+#moreRecommend{
+    /*border:solid #4286f4 2px;*/
+    display: flex;
+    justify-content:space-around;
+    overflow-x:scroll;
+}
+
+.genreRecommend{
+    cursor: pointer;
+}
